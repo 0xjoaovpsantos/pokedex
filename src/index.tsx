@@ -4,10 +4,12 @@ import './index.css';
 import reportWebVitals from './reportWebVitals';
 import 'antd/dist/antd.css';
 import { Routes } from './routes/Routes';
+import { GlobalStyle } from './styles/GlobalStyle';
 
 ReactDOM.render(
   <React.StrictMode>
     <Routes />
+    <GlobalStyle />
   </React.StrictMode>,
   document.getElementById('root'),
 );

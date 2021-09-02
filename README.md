@@ -1,46 +1,127 @@
-# Getting Started with Create React App
+# Pokedex
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+> Web application to explore the pokemons api
 
-## Available Scripts
+<a href="https://github.com/joaovictorpsantos">
+<img alt="Autor" src="https://img.shields.io/badge/autor-JoãoVictorPereiraSantos-DB3833?style=flat-square">
+</a>
 
-In the project directory, you can run:
+<a href="#">
+<img alt="Linguagens" src="https://img.shields.io/github/languages/count/joaovictorpsantos/pokedex?color=DB3833&style=flat-square">
+</a>
 
-### `yarn start`
+<a href="https://github.com/joaovictorpsantos/pokedex/stargazers">
+<img alt="Stars" src="https://img.shields.io/github/stars/joaovictorpsantos/pokedex?color=DB3833&style=flat-square">
+</a>
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
+<a href="https://github.com/joaovictorpsantos/pokedex/network/members">
+<img alt="Forks" src="https://img.shields.io/github/forks/joaovictorpsantos/pokedex?color=DB3833&style=flat-square">
+</a>
 
-The page will reload if you make edits.\
-You will also see any lint errors in the console.
+<a href="#">
+<img alt="Tamanho do código em bytes" src="https://img.shields.io/github/languages/code-size/joaovictorpsantos/pokedex?color=DB3833&style=flat-square">
+</a>
 
-### `yarn test`
+<a href="https://github.com/joaovictorpsantos/social-app/commits/master">
+<img alt="Commits" src="https://img.shields.io/github/last-commit/joaovictorpsantos/pokedex?color=DB3833&style=flat-square">
+</a>
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+<p align="center">
+   <img src=".github/previews/explore.gif" width="500"/>
+</p>
 
-### `yarn build`
+# :pushpin: Table of Contents
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+- [Features](#rocket-features)
+- [Goals](#dart-goals)
+- [Installation](#construction_worker-installation)
+- [Getting Started](#runner-getting-started)
+- [FAQ](#postbox-faq)
+- [Found a bug? Missing a specific feature?](#bug-issues)
+- [Contributing](#tada-contributing)
+- [License](#closed_book-license)
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+# :rocket: Features
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+- Browse the list of pokemons always looking for more
+- Search for a specific pokemon by name
+- By clicking on one of the cards, check the pokemon's abilities
 
-### `yarn eject`
+# :dart: Design Patterns
 
-**Note: this is a one-way operation. Once you `eject`, you can’t go back!**
+- [Ant Design](https://ant.design/) Design System used
+- [EditorConfig] used
+- [Prettier] used
+- Global Styling with [Stlyed Components](https://styled-components.com/)
+- Paging every 20 pokemons
+- Animation in the pokenos list made with [react-reveal](https://www.react-reveal.com/)
+- Each file has the name of the component and is not exported by default, so when importing, use the name it was created with.
+- Added test example (I know this is just a small example, but I will test the entire application) [React Testing Library](https://testing-library.com/docs/react-testing-library/intro/)
+- Using Spinner for visual feedback to user while api calls are in progress
+- Setting the colors used in the global style file application
+- Method created in utils folder for handling errors in API calls
+- Methods that make calls to the api start with the name 'fetch'
+- Comments on imports and instances in the files
+- Interface reuse through shared folder
+- Reuse of components through shared folder
+- .env.example file for documentation
+- Type entire application
 
-If you aren’t satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+# :construction_worker: Installation
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you’re on your own.
+**You need to install [Node.js](https://pt-br.reactjs.org/) and [Yarn](https://yarnpkg.com/) first, then in order to clone the project via HTTPS, run this command:**
 
-You don’t have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn’t feel obligated to use this feature. However we understand that this tool wouldn’t be useful if you couldn’t customize it when you are ready for it.
+```
+  git clone https://github.com/joaovictorpsantos/pokedex.git
+```
 
-## Learn More
+SSH URLs provide access to a Git repository via SSH, a secure protocol. If you have a SSH key registered in your Github account, clone the project using this command:
 
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
+```
+  git clone git@github.com:joaovictorpsantos/pokedex.git
+```
 
-To learn React, check out the [React documentation](https://reactjs.org/).
+**Install dependencies**
+
+```
+  yarn install
+```
+
+# :runner: Getting Started
+
+Run the following command in order to start the application in a development environment:
+
+```
+  yarn start
+```
+
+# :postbox: Faq
+
+**Question:** What are the tecnologies used in this project?
+
+**Answer:** The tecnologies used in this project are [ReactJS](https://pt-br.reactjs.org/) + [TypeScript](https://www.typescriptlang.org/) [Ant Design](https://ant.design/)
+
+<br/>
+
+<h4 align="center">
+  Let's share knowledge and grow together!!!
+</h4>
+
+<br/>
+
+---
+
+<h3 align="center">
+Author: <a alt="João Victor Pereira Santos" href="https://github.com/joaovictorpsantos">João Victor Pereira Santos</a>
+</h3>
+
+<p align="center">
+
+  <a alt="João Victor Pereira Santos Linkedin" href="https://www.linkedin.com/in/joao-victor-pereira-santos//">
+    <img src="https://img.shields.io/badge/LinkedIn-Jo%C3%A3o%20Victor%20Pereira%20Santos-blue?logo=linkedin"/></a>
+  <a alt="João Victor Pereira Santos GitHub" href="https://github.com/joaovictorpsantos">
+  <img src="https://img.shields.io/badge/GitHub-joaovictorpsantos-lightgrey?logo=github"/></a>
+ <a alt="João Victor Pereira Santos Twitter" href="https://twitter.com/_joaovictorps">
+  <img src="https://img.shields.io/badge/Twitter-__joaovictorps-blue?logo=twitter"/></a>
+
+</p>

@@ -4,7 +4,7 @@ import { Dispatch, SetStateAction } from 'react';
 //Components Ant Design
 import { Modal, Row, Typography, Slider } from 'antd';
 
-//Shared
+//Interfaces
 import { PokemonInformationProps } from '../../../../shared/Interfaces';
 
 interface ModalPokemonInformations {

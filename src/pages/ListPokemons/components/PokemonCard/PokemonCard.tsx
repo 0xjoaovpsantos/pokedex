@@ -10,7 +10,7 @@ import api from '../../../../services/api';
 //Components created
 import { ModalPokemonInformations } from '../ModalPokemonInformations/ModalPokemonInformations';
 
-//Shared
+//Interfaces
 import { PokemonInformationProps } from '../../../../shared/Interfaces';
 
 //Utils

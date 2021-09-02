@@ -2,7 +2,7 @@
 import { Dispatch, SetStateAction } from 'react';
 
 //Components Ant Design
-import { Col, Modal, Row, Typography, Slider } from 'antd';
+import { Modal, Row, Typography, Slider } from 'antd';
 
 //Shared
 import { PokemonInformationProps } from '../../../../shared/Interfaces';

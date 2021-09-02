@@ -2,7 +2,7 @@
 import { useState, useEffect } from 'react';
 
 //Components Ant Design
-import { Layout, Typography, Input, Row, Col } from 'antd';
+import { Typography, Row, Col } from 'antd';
 
 //Services
 import api from '../../../../services/api';
@@ -22,10 +22,9 @@ interface PokemonCardProps {
 
 export const PokemonCard = ({ pokemon }: PokemonCardProps) => {
   //Components Ant Design
-  const { Title, Text } = Typography;
+  const { Text } = Typography;
 
   //States
-  const [pokemonId, setPokemonId] = useState<string>('');
   const [pokemonInformations, setPokemonInformations] =
     useState<PokemonInformationProps>({} as PokemonInformationProps);
   const [showModalPokemonInformation, setShowModalPokemonInformation] =

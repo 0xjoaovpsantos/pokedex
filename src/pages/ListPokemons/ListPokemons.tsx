@@ -2,7 +2,7 @@
 import { useState, useEffect } from 'react';
 
 //Components Ant Design
-import { Layout, Typography, Input, Row, Col, Button } from 'antd';
+import { Layout, Typography, Input, Row, Button } from 'antd';
 
 //Shared
 import { PokemonInformationProps } from '../../shared/Interfaces';

@@ -101,7 +101,7 @@ export const ListPokemons = () => {
   return (
     <Layout>
       <Header style={{ backgroundColor: 'var(--white)' }}>
-        <Title level={1}>Pokdex</Title>
+        <Title level={1}>Pokedex</Title>
       </Header>
       <Content>
         <Search

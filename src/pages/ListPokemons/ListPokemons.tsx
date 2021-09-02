@@ -41,7 +41,7 @@ export const ListPokemons = () => {
     useState<PokemonInformationProps>({} as PokemonInformationProps);
   const [showLoadMoreButton, setShowLoadMoreButton] = useState<boolean>(false);
 
-  const getPokemons = async (resetListPokemons = false) => {
+  const fetchPokemons = async (resetListPokemons = false) => {
     const response = await api.get<GetPokemonProps>(
       `?limit=${LIMIT}&offset=${OFFSET * page}`,
     );
@@ -71,7 +71,7 @@ export const ListPokemons = () => {
   };
 
   useEffect(() => {
-    getPokemons();
+    fetchPokemons();
   }, [page]);
 
   return (

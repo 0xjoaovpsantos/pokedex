@@ -31,14 +31,14 @@ export const PokemonCard = ({ pokemon }: PokemonCardProps) => {
   const [showModalPokemonInformation, setShowModalPokemonInformation] =
     useState<boolean>(false);
 
-  const getPokemonId = async () => {
+  const fetchPokemonInformation = async () => {
     const response = await api.get<PokemonInformationProps>(`/${pokemon.name}`);
 
     setPokemonInformations(response.data);
   };
 
   useEffect(() => {
-    getPokemonId();
+    fetchPokemonInformation();
   }, []);
 
   return (

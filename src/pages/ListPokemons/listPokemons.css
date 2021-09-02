@@ -78,6 +78,6 @@
 }
 
 .pokemon-button-load-more {
-  display: block;
+  display: block !important;
   margin: 40px auto;
 }

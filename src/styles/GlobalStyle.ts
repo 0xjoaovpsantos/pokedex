@@ -30,12 +30,12 @@ export const GlobalStyle = createGlobalStyle`
   }
   /* Handle */
   ::-webkit-scrollbar-thumb {
-    background: var(--fourth );
+    background: var(--fourthColor);
     border-radius: 10px;
   }
   /* Handle on hover */
   ::-webkit-scrollbar-thumb:hover {
-    background: var(--fourth );
+    background: var(--fourthColor);
   }
 
   html {

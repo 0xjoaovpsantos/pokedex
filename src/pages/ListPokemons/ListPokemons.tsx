@@ -47,7 +47,7 @@ export const ListPokemons = () => {
   const fetchPokemons = async (resetListPokemons = false) => {
     try {
       const response = await api.get<GetPokemonProps>(
-        `?limit=${LIMIT}&offset=${OFFSET * page}`,
+        `/${searchPokemon}?limit=${LIMIT}&offset=${OFFSET * page}`,
       );
 
       if (response.data.next) {
@@ -61,6 +61,8 @@ export const ListPokemons = () => {
       } else {
         setListPokemons([...listPokemons, ...response.data.results]);
       }
+
+      setSpecificPokemon({} as PokemonInformationProps);
     } catch (error) {
       handleError(error);
     }
@@ -71,9 +73,11 @@ export const ListPokemons = () => {
       const response = await api.get<PokemonInformationProps>(
         `/${searchPokemon}`,
       );
+      setShowLoadMoreButton(false);
       setSpecificPokemon(response.data);
     } catch (error) {
       setSpecificPokemon({} as PokemonInformationProps);
+      setShowLoadMoreButton(true);
       handleError(error);
     }
   };

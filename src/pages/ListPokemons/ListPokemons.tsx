@@ -5,6 +5,8 @@ import api from '../../services/api';
 
 import { PokemonCard } from './components/PokemonCard/PokemonCard';
 
+import Fade from 'react-reveal/Fade';
+
 interface GetPokemonProps {
   next: string;
   results: PokemonCardProps[];
@@ -73,17 +75,22 @@ export const ListPokemons = () => {
           onSearch={() => fetchPokemonName()}
         />
 
-        <Row
-          gutter={[0, 20]}
-          justify="space-around"
-          className="pokemon-list-container"
-        >
-          {Object.keys(specificPokemon).length === 0 ? (
-            listPokemons.map((pokemon) => <PokemonCard pokemon={pokemon} />)
-          ) : (
-            <PokemonCard pokemon={specificPokemon} />
-          )}
-        </Row>
+        {(listPokemons.length > 0 ||
+          Object.keys(specificPokemon).length > 0) && (
+          <Fade bottom>
+            <Row
+              gutter={[0, 20]}
+              justify="space-around"
+              className="pokemon-list-container"
+            >
+              {Object.keys(specificPokemon).length === 0 ? (
+                listPokemons.map((pokemon) => <PokemonCard pokemon={pokemon} />)
+              ) : (
+                <PokemonCard pokemon={specificPokemon} />
+              )}
+            </Row>
+          </Fade>
+        )}
 
         {showLoadMoreButton && (
           <Button

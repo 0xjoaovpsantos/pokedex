@@ -8,6 +8,8 @@ import { useState, useEffect } from 'react';
 
 import '../../listPokemons.css';
 
+import Fade from 'react-reveal/Fade';
+
 interface PokemonCardProps {
   pokemon: {
     name: string;

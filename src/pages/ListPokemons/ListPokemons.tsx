@@ -1,4 +1,4 @@
-import { Layout, Typography, Input, Row, Col } from 'antd';
+import { Layout, Typography, Input, Row, Col, Button } from 'antd';
 import { useState, useEffect } from 'react';
 
 import api from '../../services/api';
@@ -6,6 +6,7 @@ import api from '../../services/api';
 import { PokemonCard } from './components/PokemonCard/PokemonCard';
 
 interface GetPokemonProps {
+  next: string;
   results: PokemonCardProps[];
 }
 
@@ -18,18 +19,27 @@ export const ListPokemons = () => {
   const LIMIT = 20;
   const OFFSET = 20;
   const [listPokemons, setListPokemons] = useState<PokemonCardProps[]>([]);
+  const [page, setPage] = useState(0);
   const [searchPokemon, setSearckPokemon] = useState('');
   const [specificPokemon, setSpecificPokemon] = useState<PokemonCardProps>(
     {} as PokemonCardProps,
   );
+  const [showLoadMoreButton, setShowLoadMoreButton] = useState(false);
   const { Header, Content } = Layout;
   const { Title, Text } = Typography;
   const { Search } = Input;
 
   const getPokemons = async (resetListPokemons = false) => {
     const response = await api.get<GetPokemonProps>(
-      `?limit=${LIMIT}&offset${OFFSET}`,
+      `?limit=${LIMIT}&offset=${OFFSET * page}`,
     );
+
+    if (response.data.next) {
+      console.log(response.data);
+      setShowLoadMoreButton(true);
+    } else {
+      setShowLoadMoreButton(false);
+    }
 
     if (resetListPokemons) {
       setListPokemons([...response.data.results]);
@@ -49,7 +59,7 @@ export const ListPokemons = () => {
 
   useEffect(() => {
     getPokemons();
-  }, []);
+  }, [page]);
 
   return (
     <Layout>
@@ -70,6 +80,10 @@ export const ListPokemons = () => {
             <PokemonCard pokemon={specificPokemon} />
           )}
         </Row>
+
+        {showLoadMoreButton && (
+          <Button onClick={() => setPage(page + 1)}>Carregar mais</Button>
+        )}
       </Content>
     </Layout>
   );

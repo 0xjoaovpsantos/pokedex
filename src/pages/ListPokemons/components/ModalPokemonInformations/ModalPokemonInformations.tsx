@@ -1,21 +1,11 @@
 import { Col, Modal, Row, Typography, Slider } from 'antd';
 import { Dispatch, SetStateAction } from 'react';
+import { PokemonInformationProps } from '../../../../shared/Interfaces';
 
 interface ModalPokemonInformations {
   visible: boolean;
   setVisible: Dispatch<SetStateAction<boolean>>;
-  pokemon: PokemonInformationsProps;
-}
-
-interface PokemonInformationsProps {
-  stats: [
-    {
-      base_stat: number;
-      stat: {
-        name: string;
-      };
-    },
-  ];
+  pokemon: PokemonInformationProps;
 }
 
 export const ModalPokemonInformations = ({
@@ -32,7 +22,7 @@ export const ModalPokemonInformations = ({
       closable={false}
       footer={false}
     >
-      {pokemon.stats.map((information) => {
+      {pokemon.stats?.map((information) => {
         return (
           <>
             <Row justify="space-around" align="middle">

@@ -5,27 +5,25 @@ import api from '../../services/api';
 
 import { PokemonCard } from './components/PokemonCard/PokemonCard';
 
+import { PokemonInformationProps } from '../../shared/Interfaces';
+
 import Fade from 'react-reveal/Fade';
 
 interface GetPokemonProps {
   next: string;
-  results: PokemonCardProps[];
-}
-
-interface PokemonCardProps {
-  name: string;
-  url: string;
+  results: PokemonInformationProps[];
 }
 
 export const ListPokemons = () => {
   const LIMIT = 20;
   const OFFSET = 20;
-  const [listPokemons, setListPokemons] = useState<PokemonCardProps[]>([]);
+  const [listPokemons, setListPokemons] = useState<PokemonInformationProps[]>(
+    [],
+  );
   const [page, setPage] = useState(0);
   const [searchPokemon, setSearckPokemon] = useState('');
-  const [specificPokemon, setSpecificPokemon] = useState<PokemonCardProps>(
-    {} as PokemonCardProps,
-  );
+  const [specificPokemon, setSpecificPokemon] =
+    useState<PokemonInformationProps>({} as PokemonInformationProps);
   const [showLoadMoreButton, setShowLoadMoreButton] = useState(false);
   const { Header, Content } = Layout;
   const { Title, Text } = Typography;
@@ -52,10 +50,12 @@ export const ListPokemons = () => {
 
   const fetchPokemonName = async () => {
     try {
-      const response = await api.get<PokemonCardProps>(`/${searchPokemon}`);
+      const response = await api.get<PokemonInformationProps>(
+        `/${searchPokemon}`,
+      );
       setSpecificPokemon(response.data);
     } catch (error) {
-      setSpecificPokemon({} as PokemonCardProps);
+      setSpecificPokemon({} as PokemonInformationProps);
     }
   };
 

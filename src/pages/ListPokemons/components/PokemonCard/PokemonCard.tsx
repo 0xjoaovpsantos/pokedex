@@ -4,52 +4,26 @@ import api from '../../../../services/api';
 
 import { ModalPokemonInformations } from '../ModalPokemonInformations/ModalPokemonInformations';
 
+import { PokemonInformationProps } from '../../../../shared/Interfaces';
+
 import { useState, useEffect } from 'react';
 
 import '../../listPokemons.css';
 
-import Fade from 'react-reveal/Fade';
-
 interface PokemonCardProps {
-  pokemon: {
-    name: string;
-    url: string;
-  };
-}
-
-interface PokemonInformationsProps {
-  sprites: {
-    front_default: string;
-  };
-  stats: [
-    {
-      base_stat: number;
-      stat: {
-        name: string;
-      };
-    },
-  ];
-  types: [
-    {
-      type: {
-        name: string;
-      };
-    },
-  ];
+  pokemon: PokemonInformationProps;
 }
 
 export const PokemonCard = ({ pokemon }: PokemonCardProps) => {
   const { Title, Text } = Typography;
   const [pokemonId, setPokemonId] = useState('');
   const [pokemonInformations, setPokemonInformations] =
-    useState<PokemonInformationsProps>({} as PokemonInformationsProps);
+    useState<PokemonInformationProps>({} as PokemonInformationProps);
   const [showModalPokemonInformation, setShowModalPokemonInformation] =
     useState(false);
 
   const getPokemonId = async () => {
-    const response = await api.get<PokemonInformationsProps>(
-      `/${pokemon.name}`,
-    );
+    const response = await api.get<PokemonInformationProps>(`/${pokemon.name}`);
 
     setPokemonInformations(response.data);
   };

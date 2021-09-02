@@ -1,7 +1,6 @@
 .pokemon-card {
-  background-color: #f65555;
-  min-height: 100px;
-  max-width: 280px;
+  min-height: 100px !important;
+  max-width: 280px !important;
   width: 100%;
   height: 80px;
   border-radius: 6px;
@@ -31,13 +30,13 @@
 
 .pokemon-name {
   font-weight: 700;
-  color: #fff;
+  color: #fff !important;
   font-size: 1.2rem;
 }
 
 .pokemon-type {
   font-weight: 400;
-  color: #fff;
+  color: #fff !important;
   font-size: 0.8rem;
 }
 

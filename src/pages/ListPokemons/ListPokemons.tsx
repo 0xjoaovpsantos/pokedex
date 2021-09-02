@@ -4,11 +4,14 @@ import { useState, useEffect } from 'react';
 //Components Ant Design
 import { Layout, Typography, Input, Row, Button } from 'antd';
 
+//Third-party library
+import Fade from 'react-reveal/Fade';
+
 //Shared
 import { PokemonInformationProps } from '../../shared/Interfaces';
 
-//Third-party library
-import Fade from 'react-reveal/Fade';
+//Utils
+import { handleError } from '../../utils/handleError';
 
 //Services
 import api from '../../services/api';
@@ -42,20 +45,24 @@ export const ListPokemons = () => {
   const [showLoadMoreButton, setShowLoadMoreButton] = useState<boolean>(false);
 
   const fetchPokemons = async (resetListPokemons = false) => {
-    const response = await api.get<GetPokemonProps>(
-      `?limit=${LIMIT}&offset=${OFFSET * page}`,
-    );
+    try {
+      const response = await api.get<GetPokemonProps>(
+        `?limit=${LIMIT}&offset=${OFFSET * page}`,
+      );
 
-    if (response.data.next) {
-      setShowLoadMoreButton(true);
-    } else {
-      setShowLoadMoreButton(false);
-    }
+      if (response.data.next) {
+        setShowLoadMoreButton(true);
+      } else {
+        setShowLoadMoreButton(false);
+      }
 
-    if (resetListPokemons) {
-      setListPokemons([...response.data.results]);
-    } else {
-      setListPokemons([...listPokemons, ...response.data.results]);
+      if (resetListPokemons) {
+        setListPokemons([...response.data.results]);
+      } else {
+        setListPokemons([...listPokemons, ...response.data.results]);
+      }
+    } catch (error) {
+      handleError(error);
     }
   };
 
@@ -67,6 +74,7 @@ export const ListPokemons = () => {
       setSpecificPokemon(response.data);
     } catch (error) {
       setSpecificPokemon({} as PokemonInformationProps);
+      handleError(error);
     }
   };
 

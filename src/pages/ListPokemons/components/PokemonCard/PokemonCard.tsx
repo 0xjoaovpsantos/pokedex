@@ -13,6 +13,9 @@ import { ModalPokemonInformations } from '../ModalPokemonInformations/ModalPokem
 //Shared
 import { PokemonInformationProps } from '../../../../shared/Interfaces';
 
+//Utils
+import { handleError } from '../../../../utils/handleError';
+
 //Custom CSS
 import '../../listPokemons.css';
 
@@ -31,9 +34,15 @@ export const PokemonCard = ({ pokemon }: PokemonCardProps) => {
     useState<boolean>(false);
 
   const fetchPokemonInformation = async () => {
-    const response = await api.get<PokemonInformationProps>(`/${pokemon.name}`);
+    try {
+      const response = await api.get<PokemonInformationProps>(
+        `/${pokemon.name}`,
+      );
 
-    setPokemonInformations(response.data);
+      setPokemonInformations(response.data);
+    } catch (error) {
+      handleError(error);
+    }
   };
 
   useEffect(() => {

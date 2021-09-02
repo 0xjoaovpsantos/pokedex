@@ -3,7 +3,11 @@ import { createGlobalStyle } from 'styled-components';
 
 export const GlobalStyle = createGlobalStyle`
   :root {
-    --greenText: rgb(88, 171, 246);
+    --white: #fff;
+    --primaryColor:#f65555;
+    --secondaryColor: rgb(139, 190, 138);
+    --thirdColor: rgb(255, 167, 86);
+    --fourthColor: rgb(88, 171, 246);
   }
 
   * {
@@ -26,12 +30,12 @@ export const GlobalStyle = createGlobalStyle`
   }
   /* Handle */
   ::-webkit-scrollbar-thumb {
-    background: var(--greenText);
+    background: var(--fourth );
     border-radius: 10px;
   }
   /* Handle on hover */
   ::-webkit-scrollbar-thumb:hover {
-    background: var(--greenText);
+    background: var(--fourth );
   }
 
   html {

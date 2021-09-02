@@ -30,13 +30,13 @@
 
 .pokemon-name {
   font-weight: 700;
-  color: #fff !important;
+  color: var(--white) !important;
   font-size: 1.2rem;
 }
 
 .pokemon-type {
   font-weight: 400;
-  color: #fff !important;
+  color: var(--white) !important;
   font-size: 0.8rem;
 }
 
@@ -46,19 +46,19 @@
 }
 
 .pokemon-list-container div.pokemon-card:nth-child(4n + 1) {
-  background-color: #f65555;
+  background-color: var(--primaryColor);
 }
 
 .pokemon-list-container div.pokemon-card:nth-child(4n + 2) {
-  background-color: rgb(139, 190, 138);
+  background-color: var(--secondaryColor);
 }
 
 .pokemon-list-container div.pokemon-card:nth-child(4n + 3) {
-  background-color: rgb(255, 167, 86);
+  background-color: var(--thirdColor);
 }
 
 .pokemon-list-container div.pokemon-card:nth-child(4n + 4) {
-  background-color: rgb(88, 171, 246);
+  background-color: var(--fourthColor);
 }
 
 .pokemon-stat {

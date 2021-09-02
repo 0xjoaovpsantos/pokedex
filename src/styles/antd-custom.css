@@ -2,11 +2,11 @@
   max-width: 1220px;
   padding: 20px;
   margin: 0 auto;
-  background: #fff !important;
+  background: var(--white) !important;
 }
 
 .ant-layout-content {
-  background-color: #fff;
+  background-color: var(--white);
 }
 
 h1.ant-typography {

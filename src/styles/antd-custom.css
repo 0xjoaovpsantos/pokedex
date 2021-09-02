@@ -1,0 +1,15 @@
+.ant-layout {
+  max-width: 1220px;
+  padding: 20px;
+  margin: 0 auto;
+  background: #fff !important;
+}
+
+.ant-layout-content {
+  background-color: #fff;
+}
+
+h1.ant-typography {
+  margin-top: 10px;
+  text-align: center;
+}

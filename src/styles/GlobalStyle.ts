@@ -2,7 +2,7 @@ import { createGlobalStyle } from 'styled-components';
 
 export const GlobalStyle = createGlobalStyle`
   :root {
-    --greenText: #21E270;
+    --greenText: rgb(88, 171, 246);
   }
 
   * {
@@ -12,7 +12,7 @@ export const GlobalStyle = createGlobalStyle`
   }
 
   body{
-    font-family: 'FontsFreeNetSFProTextBold';
+    font-family: 'Montserrat', sans-serif;
   }
     /* width */
   ::-webkit-scrollbar {

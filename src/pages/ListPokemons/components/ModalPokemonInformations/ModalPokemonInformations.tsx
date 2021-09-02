@@ -1,4 +1,4 @@
-import { Modal } from 'antd';
+import { Col, Modal, Row, Typography, Slider } from 'antd';
 import { Dispatch, SetStateAction } from 'react';
 
 interface ModalPokemonInformations {
@@ -23,14 +23,29 @@ export const ModalPokemonInformations = ({
   setVisible,
   pokemon,
 }: ModalPokemonInformations) => {
+  const { Text } = Typography;
+
   return (
-    <Modal visible={visible} onCancel={() => setVisible(false)}>
+    <Modal
+      visible={visible}
+      onCancel={() => setVisible(false)}
+      closable={false}
+      footer={false}
+    >
       {pokemon.stats.map((information) => {
         return (
           <>
-            <p>
-              {information.stat.name.toUpperCase()} - {information.base_stat}
-            </p>
+            <Row justify="space-around" align="middle">
+              <Text className="pokemon-stat">
+                {information.stat.name.toUpperCase()}
+              </Text>
+              <Text>{information.base_stat}</Text>
+              <Slider
+                className="pokemon-base-state"
+                defaultValue={information.base_stat}
+              />
+              <Text>100</Text>
+            </Row>
           </>
         );
       })}

@@ -70,11 +70,19 @@ export const PokemonCard = ({ pokemon }: PokemonCardProps) => {
         className="pokemon-card"
         onClick={() => setShowModalPokemonInformation(true)}
       >
-        <Text>{pokemon.name}</Text>
-        <img src={pokemonInformations?.sprites?.front_default} alt="" />
-        {pokemonInformations?.types?.map((type) => (
-          <p>{type.type.name}</p>
-        ))}
+        <Row justify="space-around">
+          <Col className="pokemon-name-container">
+            <Text className="pokemon-name">{pokemon.name}</Text>
+            {pokemonInformations?.types?.map((type) => (
+              <Text className="pokemon-type">{type.type.name}</Text>
+            ))}
+          </Col>
+          <img
+            src={pokemonInformations?.sprites?.front_default}
+            alt=""
+            className="pokemon-img"
+          />
+        </Row>
       </Col>
       {showModalPokemonInformation && (
         <ModalPokemonInformations

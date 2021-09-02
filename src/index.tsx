@@ -1,6 +1,7 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
 import './index.css';
+import './styles/antd-custom.css';
 import reportWebVitals from './reportWebVitals';
 import 'antd/dist/antd.css';
 import { Routes } from './routes/Routes';

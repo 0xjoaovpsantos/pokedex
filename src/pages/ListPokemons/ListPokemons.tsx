@@ -73,7 +73,11 @@ export const ListPokemons = () => {
           onSearch={() => fetchPokemonName()}
         />
 
-        <Row gutter={[0, 20]} justify="space-around">
+        <Row
+          gutter={[0, 20]}
+          justify="space-around"
+          className="pokemon-list-container"
+        >
           {Object.keys(specificPokemon).length === 0 ? (
             listPokemons.map((pokemon) => <PokemonCard pokemon={pokemon} />)
           ) : (
@@ -82,7 +86,12 @@ export const ListPokemons = () => {
         </Row>
 
         {showLoadMoreButton && (
-          <Button onClick={() => setPage(page + 1)}>Carregar mais</Button>
+          <Button
+            className="pokemon-button-load-more"
+            onClick={() => setPage(page + 1)}
+          >
+            Carregar mais
+          </Button>
         )}
       </Content>
     </Layout>

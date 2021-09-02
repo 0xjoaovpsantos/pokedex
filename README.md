@@ -66,6 +66,7 @@
 - Reuse of components through shared folder
 - .env.example file for documentation
 - Type entire application
+- Semantic commits
 
 # :construction_worker: Installation
 

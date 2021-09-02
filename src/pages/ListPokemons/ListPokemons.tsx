@@ -20,11 +20,11 @@ export const ListPokemons = () => {
   const [listPokemons, setListPokemons] = useState<PokemonInformationProps[]>(
     [],
   );
-  const [page, setPage] = useState(0);
-  const [searchPokemon, setSearckPokemon] = useState('');
+  const [page, setPage] = useState<number>(0);
+  const [searchPokemon, setSearckPokemon] = useState<string>('');
   const [specificPokemon, setSpecificPokemon] =
     useState<PokemonInformationProps>({} as PokemonInformationProps);
-  const [showLoadMoreButton, setShowLoadMoreButton] = useState(false);
+  const [showLoadMoreButton, setShowLoadMoreButton] = useState<boolean>(false);
   const { Header, Content } = Layout;
   const { Title, Text } = Typography;
   const { Search } = Input;
@@ -35,7 +35,6 @@ export const ListPokemons = () => {
     );
 
     if (response.data.next) {
-      console.log(response.data);
       setShowLoadMoreButton(true);
     } else {
       setShowLoadMoreButton(false);

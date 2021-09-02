@@ -16,11 +16,11 @@ interface PokemonCardProps {
 
 export const PokemonCard = ({ pokemon }: PokemonCardProps) => {
   const { Title, Text } = Typography;
-  const [pokemonId, setPokemonId] = useState('');
+  const [pokemonId, setPokemonId] = useState<string>('');
   const [pokemonInformations, setPokemonInformations] =
     useState<PokemonInformationProps>({} as PokemonInformationProps);
   const [showModalPokemonInformation, setShowModalPokemonInformation] =
-    useState(false);
+    useState<boolean>(false);
 
   const getPokemonId = async () => {
     const response = await api.get<PokemonInformationProps>(`/${pokemon.name}`);

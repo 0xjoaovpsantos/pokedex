@@ -50,8 +50,8 @@
 # :dart: Design Patterns
 
 - [Ant Design](https://ant.design/) Design System used
-- [EditorConfig] used
-- [Prettier] used
+- [EditorConfig](https://editorconfig.org/) used
+- [Prettier](https://prettier.io/) used
 - Global Styling with [Stlyed Components](https://styled-components.com/)
 - Paging every 20 pokemons
 - Animation in the pokenos list made with [react-reveal](https://www.react-reveal.com/)

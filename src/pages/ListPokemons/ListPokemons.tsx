@@ -32,7 +32,7 @@ export const ListPokemons = () => {
 
   //Components Ant Design
   const { Header, Content } = Layout;
-  const { Title, Text } = Typography;
+  const { Title } = Typography;
   const { Search } = Input;
 
   //States

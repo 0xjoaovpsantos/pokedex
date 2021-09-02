@@ -1,13 +1,20 @@
-import { Layout, Typography, Input, Row, Col, Button } from 'antd';
+//React
 import { useState, useEffect } from 'react';
 
-import api from '../../services/api';
+//Components Ant Design
+import { Layout, Typography, Input, Row, Col, Button } from 'antd';
 
-import { PokemonCard } from './components/PokemonCard/PokemonCard';
-
+//Shared
 import { PokemonInformationProps } from '../../shared/Interfaces';
 
+//Third-party library
 import Fade from 'react-reveal/Fade';
+
+//Services
+import api from '../../services/api';
+
+//Components created
+import { PokemonCard } from './components/PokemonCard/PokemonCard';
 
 interface GetPokemonProps {
   next: string;
@@ -15,8 +22,16 @@ interface GetPokemonProps {
 }
 
 export const ListPokemons = () => {
+  //Constants
   const LIMIT = 20;
   const OFFSET = 20;
+
+  //Components Ant Design
+  const { Header, Content } = Layout;
+  const { Title, Text } = Typography;
+  const { Search } = Input;
+
+  //States
   const [listPokemons, setListPokemons] = useState<PokemonInformationProps[]>(
     [],
   );
@@ -25,9 +40,6 @@ export const ListPokemons = () => {
   const [specificPokemon, setSpecificPokemon] =
     useState<PokemonInformationProps>({} as PokemonInformationProps);
   const [showLoadMoreButton, setShowLoadMoreButton] = useState<boolean>(false);
-  const { Header, Content } = Layout;
-  const { Title, Text } = Typography;
-  const { Search } = Input;
 
   const getPokemons = async (resetListPokemons = false) => {
     const response = await api.get<GetPokemonProps>(

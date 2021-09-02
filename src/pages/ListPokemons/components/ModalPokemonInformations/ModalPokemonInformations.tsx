@@ -1,5 +1,10 @@
-import { Col, Modal, Row, Typography, Slider } from 'antd';
+//React
 import { Dispatch, SetStateAction } from 'react';
+
+//Components Ant Design
+import { Col, Modal, Row, Typography, Slider } from 'antd';
+
+//Shared
 import { PokemonInformationProps } from '../../../../shared/Interfaces';
 
 interface ModalPokemonInformations {
@@ -13,6 +18,7 @@ export const ModalPokemonInformations = ({
   setVisible,
   pokemon,
 }: ModalPokemonInformations) => {
+  //Components Ant Design
   const { Text } = Typography;
 
   return (

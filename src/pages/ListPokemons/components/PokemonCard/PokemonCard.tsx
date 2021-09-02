@@ -1,13 +1,19 @@
-import { Layout, Typography, Input, Row, Col } from 'antd';
-
-import api from '../../../../services/api';
-
-import { ModalPokemonInformations } from '../ModalPokemonInformations/ModalPokemonInformations';
-
-import { PokemonInformationProps } from '../../../../shared/Interfaces';
-
+//React
 import { useState, useEffect } from 'react';
 
+//Components Ant Design
+import { Layout, Typography, Input, Row, Col } from 'antd';
+
+//Services
+import api from '../../../../services/api';
+
+//Components created
+import { ModalPokemonInformations } from '../ModalPokemonInformations/ModalPokemonInformations';
+
+//Shared
+import { PokemonInformationProps } from '../../../../shared/Interfaces';
+
+//Custom CSS
 import '../../listPokemons.css';
 
 interface PokemonCardProps {
@@ -15,7 +21,10 @@ interface PokemonCardProps {
 }
 
 export const PokemonCard = ({ pokemon }: PokemonCardProps) => {
+  //Components Ant Design
   const { Title, Text } = Typography;
+
+  //States
   const [pokemonId, setPokemonId] = useState<string>('');
   const [pokemonInformations, setPokemonInformations] =
     useState<PokemonInformationProps>({} as PokemonInformationProps);
@@ -28,17 +37,9 @@ export const PokemonCard = ({ pokemon }: PokemonCardProps) => {
     setPokemonInformations(response.data);
   };
 
-  // const fetchPokemonInformations = async () => {
-  //   await api.get('/');
-  // }
-
   useEffect(() => {
     getPokemonId();
   }, []);
-
-  // useEffect(() => {
-  //   fetchPokemonInformations();
-  // }, [pokemonId]);
 
   return (
     <>
